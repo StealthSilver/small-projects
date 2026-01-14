@@ -1,0 +1,46 @@
+BACKEND
+
+1. create the folder names backend
+2. cd backend
+3. npm init -y
+4. npx tsc --init 
+5. npm install express
+6. npm install -D typescript ts-node-dev @types/node @types/express
+7. inside the tsconfig.json change the rootDir to ./src and the outDir to ./dist
+8. create the src folder and create index.ts
+9. write the logic in the index.ts
+ - 9.1 add the imports for express and req, res
+ - 9.2 init the express instance as app
+ - write the express.json middleware
+ - make the app.get route
+ - make the app.listen route
+ - write the core logic inside the get route 
+ - write the cors middleware for the frontend and import it 
+10. add the start build and dev script in package.json 
+"build": "tsc -b",
+"start": "node dist/index.js",
+"dev": "npm run build && npm run start"
+11. run the application - npm run dev
+
+
+FRONTEND 
+
+1. initialise a new react project with ts and tailwind and name it frontend 
+2. go to frontend and npm install 
+3. clean the App.tsx file
+4. in the return statement render div -> h1 - button
+5. add the state for greeting and init at empty string 
+6. import use state
+7. on teh button add onClick = {fetchGreeting}
+8. write the featchGreeting async function 
+9. use the fetch function, parse hte data, pass the data in the setGreeting 
+10. conditionally render the greeting in the <p> tag 
+11. add try catch block for fetchGreeting
+12. add loading state 
+13. style the applcaition
+ - 13.1 for the parent div - - - min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center px-4
+ - 13.2 for heading / function title - - - text-[11px] font-semibold tracking-[0.25em] text-sky-400 uppercase
+ - 13.3 for professional button - - - inline-flex items-center justify-center w-full rounded-xl bg-sky-500 px-4 py-2.5 text-sm font-medium text-slate-950 shadow-sm shadow-sky-500/40 hover:bg-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:opacity-60 disabled:cursor-not-allowed transition-colors
+14. run teh applciation - npm run dev 
+
+COMPLETED

@@ -1,0 +1,36 @@
+1. create the folder names backend
+2. cd backend
+3. npm init -y
+4. npx tsc --init 
+5. npm install express
+6. npm install -D typescript ts-node-dev @types/node @types/express
+7. inside the tsconfig.json change the rootDir to ./src and the outDir to ./dist
+8. create the src folder and create index.ts
+9. write the logic in the index.ts
+ - 9.1 add the imports for express
+ - 9.2 init the express instance as app
+ - write the express.json middleware
+ - make the app.listen route
+ - write the cors middleware for the frontend and import it 
+ - create routes, data and controller folder in scr
+ - in the data folder make a file named notes.store.ts
+ - in notes.store.ts create an interface Note and add id, title, content
+ - init a in memory data store and export export const notes : Note[] = [];
+ - now write the controllers, in teh controllers folder make a notes.controller.ts 
+ - add the imports for res, req and import the notes interface and the notes array from the respective places
+ - add the functions getNotes, createNotes and deleteNotes and export them
+ - write the core logic for the functions
+ - in the routes create notes.routes.ts 
+ - import the Router and inti it. import all the functions from the controller 
+ - add the functions with the respective endpoints . router.get - getNotes , router.post - createNotes , router.delete - deleteNotes
+ - import the routes in index.ts and use them with the base route app.use("/api/notes", notesRouter);
+10. add the start build and dev script in package.json 
+"build": "tsc -b",
+"start": "node dist/index.js",
+"dev": "npm run build && npm run start"
+
+
+req.body        // data sent from frontend
+req.params.id  // URL parameter
+res.json()     // send response
+res.status()   // HTTP status code
