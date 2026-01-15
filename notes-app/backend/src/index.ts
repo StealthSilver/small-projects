@@ -1,5 +1,4 @@
 import express from "express";
-import { Request, Response } from "express";
 import cors from "cors";
 import notesRouter from "./routes/notes.routes";
 
